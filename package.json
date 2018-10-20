@@ -5,8 +5,8 @@
   "repository": "https://github.com/statuspal/statuspal-theme",
   "main": "index.js",
   "theme": {
-    "name": "default",
-    "description": "Theme with a top bar and small logo",
+    "name": "big-logo",
+    "description": "Theme with a big logo and no top bar",
     "version": "1.0.0"
   },
   "scripts": {

@@ -7,14 +7,11 @@
     color: {{ design.link_color  }};
     border-color: {{ design.link_color  }};
   }
-  .header {
-    background: linear-gradient(to right, {{ design.header_bg_color1  }}, {{ design.header_bg_color2  }});
-  }
-  .header a {
-    color: {{ design.header_fg_color }};
-  }
   h1.incident-title, .incidents-table a {
     color: {{ design.incident_header_color }};
+  }
+  .header a.subscribe {
+    border-color: {{ design.link_color }};
   }
 
   /* system status colors */
@@ -76,11 +73,11 @@
 </style>
 
 <div class="header">
-  <div class="container">
+  <div class="container-fluid">
     <div class="brand-name-container">
       <a href="{{ home_url | url }}" class="brand-name">
         {% if design.logo %}
-          <img src="{{ design.logo }}" alt="{{ name }} Logo" style="height: 30px">
+          <img src="{{ design.logo }}" alt="{{ name }} Logo">
         {% endif %}
         {{ header_logo_text }}
       </a>

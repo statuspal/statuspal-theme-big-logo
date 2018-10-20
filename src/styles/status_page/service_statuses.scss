@@ -1,3 +1,34 @@
+.service-status--icon {
+  font-style: normal;
+  border: 2px solid;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1em;
+  font-weight: bold;
+  font-family: arial;
+}
+.service-status--icon.ok {
+  transform: scaleX(-1) rotate(-45deg);
+  &:after {
+    content: "L";
+    position: relative;
+    top: -0.02em;
+    right: -0.02em;
+  }
+}
+.service-status--icon.not-ok {
+  transform: none;
+  &:after {
+    content: "✕";
+    position: relative;
+    left: 0.5px;
+  }
+}
+
 .service-status {
   position: relative;
 
@@ -34,21 +65,9 @@
   }
 
   .service-status--icon {
-    &:before { content: "L" }
-    font-style: normal;
-    transform: scaleX(-1) rotate(-45deg);
+    @extend .service-status--icon.ok;
     margin-left: 10px;
-    border: 2px solid;
-    width: 15px;
-    height: 15px;
     font-size: 12px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1em;
-    font-weight: bold;
-    font-family: arial;
   }
 }
 
@@ -93,12 +112,7 @@
 .services-status {
   .status-type-major > .service-status--info, .status-type-minor > .service-status--info {
     .service-status--icon {
-      transform: none;
-      &:before {
-        content: "✕";
-        position: relative;
-        left: 0.5px;
-      }
+      @extend .service-status--icon.not-ok;
     }
   }
 }
