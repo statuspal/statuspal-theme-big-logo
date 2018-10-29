@@ -10,9 +10,20 @@
   h1.incident-title, .incidents-table a {
     color: {{ design.incident_header_color }};
   }
-  .header a.subscribe {
-    border-color: {{ design.link_color }};
+  .header {
+    background: linear-gradient(to right, {{ design.header_bg_color1  }}, {{ design.header_bg_color2  }});
   }
+  .header a {
+    color: {{ design.header_fg_color }};
+  }
+  .header a.subscribe {
+    border-color: {{ design.header_fg_color }};
+  }
+  {% if design.bg_image %}
+  .header {
+    background-image: url({{ design.bg_image }});
+  }
+  {% endif %}
 
   /* system status colors */
 
@@ -85,9 +96,28 @@
       </a>
     </div>
     {% if plan != "free" %}
-      <a href="#" class="subscribe">Subscribe to Updates</a>
+      <a href="#" class="subscribe">Subscribe<span class="hidden-sm"> to Updates</span></a>
     {% endif %}
   </div>
+
+  {% if services %}
+  <div class="system-status-container" style="text-align:center">
+    <div class="system-status type-{{ current_incident_type }}">
+      {% if current_incident_type == "none" %}
+        <div class="system-status--description">
+          All Systems Operational
+        </div>
+        <i class="service-status--icon ok"></i>
+      {% else %}
+        <div class="system-status--description">
+          There {% if incidents.size > 1 %}are{% else %}is an{% endif %} ongoing
+          {% if current_incident_type == "scheduled" %}Maintenance{% else %}Incident{% endif %}{% if incidents.size > 1 %}s{% endif %}
+        </div>
+        <i class="service-status--icon not-ok"></i>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
 </div>
 
 {% if info %}<p class="alert alert-info" role="alert">{{ info }}</p>{% endif %}
