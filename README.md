@@ -1,6 +1,6 @@
-# Statuspal Default Theme
+# Statuspal Big Logo Theme
 
-This is the new default theme of Statuspal, which features a small top bar with an optional
+This is a new theme of Statuspal, which features a large header with an optional
 logo image and and logo text, here is a preview:
 
 ![Theme Preview](/preview.png?raw=true "Theme Preview")
