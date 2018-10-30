@@ -88,10 +88,12 @@
 <div class="header">
   <div class="container-fluid">
     <div class="brand-name-container">
-      <a href="{{ home_url | url }}" class="brand-name">
-        {% if design.logo %}
+      {% if design.logo %}
+        <a href="{{ home_url | url }}" class="brand-name">
           <img src="{{ design.logo }}" alt="{{ name }} Logo">
-        {% endif %}
+        </a>
+      {% endif %}
+      <a href="{{ home_url | url }}" class="brand-name">
         {{ header_logo_text }}
       </a>
     </div>
