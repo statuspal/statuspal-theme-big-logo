@@ -118,6 +118,15 @@
         <i class="service-status--icon not-ok"></i>
       {% endif %}
     </div>
+
+    {% if current_incident_type == "none" and design.support_email %}
+      <div class="contact-support">
+        Don't agree? contact us at
+        <a href="mailto:{{ design.support_email }}?subject=Report Incident">
+          {{ design.support_email }}
+        </a>
+      </div>
+    {% endif %}
   </div>
   {% endif %}
 </div>
