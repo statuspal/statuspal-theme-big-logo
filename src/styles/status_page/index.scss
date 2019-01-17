@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: center;
   max-width: 80%;
-  margin: 80px auto 50px auto;
+  margin: 80px auto 0 auto;
 
   .system-status--description {
     flex: 1;
@@ -27,10 +27,13 @@
 .contact-support {
   margin-top: .8em;
   text-align: center;
-  color: #888;
+
+  &, a {
+    color: #aaa !important;
+  }
 
   a {
-    color: #555;
+    text-decoration: underline;
   }
 }
 
