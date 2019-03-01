@@ -98,7 +98,7 @@
       </a>
     </div>
     {% if plan != "free" and subscribers_enabled %}
-      <a href="#" class="subscribe">Subscribe<span class="hidden-sm"> to Updates</span></a>
+      <a href="#" class="subscribe">{% t 'subscribe_to_updates_1' %}<span class="hidden-sm"> {% t 'subscribe_to_updates_2' %}</span></a>
     {% endif %}
   </div>
 
@@ -107,21 +107,32 @@
     <div class="system-status type-{{ current_incident_type }}">
       {% if current_incident_type == "none" %}
         <div class="system-status--description">
-          All Systems Operational
+          {% t 'overall_status.operational' %}
         </div>
         <i class="service-status--icon ok"></i>
       {% else %}
         <div class="system-status--description">
-          There {% if incidents.size > 1 %}are{% else %}is an{% endif %} ongoing
-          {% if current_incident_type == "scheduled" %}Maintenance{% else %}Incident{% endif %}{% if incidents.size > 1 %}s{% endif %}
+          {% if incidents.size == 1 %}
+            {% if current_incident_type == "scheduled" %}
+              {% t 'overall_status.maintenance_singular' %}
+            {% else %}
+              {% t 'overall_status.issue_singular' %}
+            {% endif %}
+          {% else %}
+            {% if current_incident_type == "scheduled" %}
+              {% t 'overall_status.maintenance_plural' %}
+            {% else %}
+              {% t 'overall_status.issue_plural' %}
+            {% endif %}
+          {% endif %}
         </div>
         <i class="service-status--icon not-ok"></i>
       {% endif %}
     </div>
 
-    {% if current_incident_type == "none" and design.support_email %}
+    {% if current_incident_type == "scheduled" or current_incident_type == "none" and design.support_email %}
       <div class="contact-support">
-        Don't agree? contact us at
+        {% t 'contact_us' %}
         <a href="mailto:{{ design.support_email }}?subject=Report Incident">
           {{ design.support_email }}
         </a>
