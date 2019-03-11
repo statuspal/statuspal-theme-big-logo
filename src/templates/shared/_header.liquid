@@ -126,18 +126,20 @@
             {% endif %}
           {% endif %}
         </div>
-        <i class="service-status--icon not-ok"></i>
+        {% if current_incident_type == "scheduled" %}
+          <i class="service-status--icon ok"></i>
+        {% else %}
+          <i class="service-status--icon not-ok"></i>
+        {% endif %}
       {% endif %}
     </div>
 
-    {% if current_incident_type == "scheduled" or current_incident_type == "none" and design.support_email %}
-      <div class="contact-support">
-        {% t 'contact_us' %}
-        <a href="mailto:{{ design.support_email }}?subject=Report Incident">
-          {{ design.support_email }}
-        </a>
-      </div>
-    {% endif %}
+    <div class="contact-support">
+      {% t 'contact_us' %}
+      <a href="mailto:{{ design.support_email }}?subject=Report Incident">
+        {{ design.support_email }}
+      </a>
+    </div>
   </div>
   {% endif %}
 </div>
