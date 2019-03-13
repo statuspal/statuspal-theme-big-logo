@@ -134,12 +134,14 @@
       {% endif %}
     </div>
 
+    {% if design.support_email %}
     <div class="contact-support">
       {% t 'contact_us' %}
       <a href="mailto:{{ design.support_email }}?subject=Report Incident">
         {{ design.support_email }}
       </a>
     </div>
+    {% endif %}
   </div>
   {% endif %}
 </div>
