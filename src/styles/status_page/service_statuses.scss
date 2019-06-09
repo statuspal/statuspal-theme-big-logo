@@ -74,8 +74,10 @@
 // parents
 .services-status > .service-status {
   @extend .card;
-  padding: 18px 20px !important;
+  padding: 16px !important;
   border-left: 1px solid;
+  margin-bottom: 15px !important;
+  box-shadow: 0 2px 3px rgba(0,0,0,.1) !important;
 
   & > .service-status--children {
     margin-top: 10px;
@@ -110,6 +112,7 @@
 
 // change service status icon on minor/major incidents
 .services-status {
+  margin-bottom: $spacing;
   .status-type-major > .service-status--info, .status-type-minor > .service-status--info {
     .service-status--icon {
       @extend .service-status--icon.not-ok;
