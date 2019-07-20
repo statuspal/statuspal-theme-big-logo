@@ -25,11 +25,23 @@
       font-size: 1.2em;
       margin-bottom: 1em;
       color: #676767;
+      position: relative;
+      .incident--type-name-tag {
+        font-size:14px;
+        line-height: 1em;
+        font-weight:600;
+      }
     }
     .incident--current-status {
       margin-bottom: 1em;
       font-size: 1.1em;
       font-weight: 300;
+      p:first-of-type {
+        display: inline;
+      }
+      span:first-of-type {
+        font-weight:400;
+      }
     }
     .incident--footer {
       padding-top: 10px;
@@ -70,4 +82,10 @@
   color: $service-color;
   margin: 5px 5px 0 0;
   float: left;
+}
+
+.incident--full-page {
+  .incident--type-name-tag {
+    float: right;
+  }
 }
