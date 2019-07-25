@@ -25,10 +25,10 @@
           {% endif %}
         {% endif %}
       </h1>
-      <span class="incident--type-name-tag status-type-{{incident.type}}">{{type}}</span>
 
       <div class="incident--header">
         <div class="incident--services">
+          <span class="incident--type-name-tag status-type-{{incident.type}}">{{type}}</span>
           {% for service in incident.services %}
             <span class="incident--service">{{ service.name }}</span>
           {% endfor %}
