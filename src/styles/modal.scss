@@ -49,7 +49,7 @@
     color: white;
     cursor: pointer;
     border-radius: 0;
-    &:hover {
+    &:hover, &:focus {
       background-color: lighten(black, 30%);
     }
   }
@@ -85,10 +85,7 @@
     }
   }
 
-  $space: .8rem;
-
   .agree {
-    margin-top: $space;
     display: block;
     font-weight: 300;
 
@@ -97,29 +94,42 @@
     }
   }
 
-  input[type="email"] {
-    width: calc(100% - 21px);
-  }
-
-  h4 {
-    font-weight: 400;
-    margin: 0 0 $space 0;
-  }
-
-  .row {
-    padding: $space $space $space*2 $space;
-    margin: $space 0;
-    border-bottom: 1px solid rgb(236, 236, 236);
-
-    &:first-child {
-      margin-top: $space*2;
-    }
-    &:last-child {
-      border: none;
-    }
+  input[type="email"], input[type="tel"], input[type="submit"], select {
+    width: 90%;
+    max-width: 350px;
+    box-sizing: border-box;
+    margin-bottom: .5em;
+    font-size: 15px;
   }
 
   .twitter-handle {
     font-size: 1.1em;
   }
+
+  #sms-tab {
+    select {
+      height: 34px;
+      padding: 13px;
+      border: 1px solid lightgrey;
+    }
+  }
+}
+
+.tabs {
+  margin: 1em 0;
+}
+.tabs a {
+  margin: 0 15px;
+  font-weight: 300;
+
+  &.active {
+    font-weight: 600;
+  }
+}
+
+.tab-content {
+  margin: 2em 0;
+}
+.tab-content > * {
+  display: none;
 }
