@@ -107,6 +107,10 @@
       {% else %}
         {% if design.twitter_public_screen_name %}
           <a href="#" class="subscribe">{% t 'subscribe_to_updates_1' %}<span class="hidden-sm"> {% t 'subscribe_to_updates_2' %}</span></a>
+        {% else %}
+          {% if sms_notifications_enabled %}
+            <a href="#" class="subscribe">{% t 'subscribe_to_updates_1' %}<span class="hidden-sm"> {% t 'subscribe_to_updates_2' %}</span></a>
+          {% endif %}
         {% endif %}
       {% endif %}
     {% endif %}
