@@ -20,8 +20,9 @@
 
     <div class="tab-content">
       {% if plan != "free" and subscribers_enabled %}
-        <form action="{{ subscribe_url }}" method="post" id="email-tab">
+        <form action="{{ sms_subscribe_url }}" method="post" id="email-tab">
           <input type="hidden" value="{{ token }}" name="_csrf_token"/>
+          <input type="hidden" name="subscription[type]" value="email">
           <input type="email" name="subscription[email]" required autofocus="true" placeholder="your@email.com">
           <input type="submit" value="{% t 'subscribe_modal.button' %}">
           <label class="agree">
