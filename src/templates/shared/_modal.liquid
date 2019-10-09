@@ -28,17 +28,8 @@
           <label class="agree">
             <input type="checkbox" required="required"> {% t 'subscribe_modal.agree_checkbox' %}
           </label>
+          <p class="data-info">{% t 'subscribe_modal.agreement_message' %}</p>
         </form>
-      {% endif %}
-
-      {% if slack_subscriptions_enabled %}
-        <div class="slack-subscribe" id="slack-tab">
-          <a href="{{ js_base_url }}auth/slack/new?status_page={{ subdomain }}&lang={{ locale }}">
-            <img alt="Add to Slack" height="40" width="139"
-              src="https://platform.slack-edge.com/img/add_to_slack.png"
-              srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" />
-          </a>
-        </div>
       {% endif %}
 
       {% if sms_notifications_enabled %}
@@ -55,7 +46,19 @@
           />
 
           <input type="submit" value="{% t 'subscribe_modal.button' %}">
+          <p class="data-info">{% t 'subscribe_modal.agreement_message' %}</p>
         </form>
+      {% endif %}
+
+      {% if slack_subscriptions_enabled %}
+        <div class="slack-subscribe" id="slack-tab">
+          <a href="{{ js_base_url }}auth/slack/new?status_page={{ subdomain }}&lang={{ locale }}">
+            <img alt="Add to Slack" height="40" width="139"
+              src="https://platform.slack-edge.com/img/add_to_slack.png"
+              srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" />
+          </a>
+          <p class="data-info">{% t 'subscribe_modal.agreement_message' %}</p>
+        </div>
       {% endif %}
 
       {% if design.twitter_public_screen_name %}
