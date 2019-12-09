@@ -27,7 +27,8 @@
       {% endif %}
     </div>
     <div class="incident--current-status markdown">
-      [{{incident.current_status.activity_type.name}}] {{ incident.current_status.description }}
+      {% assign t_key = "incident.update.types." | append: incident.current_status.activity_type.key %}
+      [{% t t_key %}] {{ incident.current_status.description }}
     </div>
     <div class="incident--footer">
       <div class="incident--services" title="Services affected by this incident">
