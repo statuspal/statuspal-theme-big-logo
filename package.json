@@ -44,7 +44,7 @@
     "html-webpack-plugin": "^4.0.0-alpha.2",
     "liquidjs": "^6.0.0",
     "node-fetch": "^2.2.0",
-    "node-sass": "^4.9.3",
+    "node-sass": "^4.13.1",
     "onchange": "^4.1.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
